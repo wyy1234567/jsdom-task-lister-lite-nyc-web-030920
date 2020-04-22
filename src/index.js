@@ -8,14 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = document.getElementsByTagName('input')[1];
   const userInput = document.getElementsByTagName('input')[0];
 
-  submitButton.addEventListener('click', function(event){
-    event.preventDefault;
-    console.log(event);
+  submitButton.addEventListener('click', function(event){   
     let task = userInput.value;
-    let taskUl = document.getElementsByTagName;
+    let taskUl = document.getElementById('tasks');
     let newLi = document.createElement('li');
     newLi.innerHTML = `${task}`;
     taskUl.appendChild(newLi);
+    event.preventDefault();  
   })
-
 });
