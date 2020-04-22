@@ -21,18 +21,14 @@
     newLi.innerHTML = `${task}`;
     let deleteButton = document.createElement('button');
     deleteButton.innerHTML = 'DELETE';
+    deleteButton.addEventListener('click', function(event){
+      const taskToDelete = event.target.parentNode;
+      taskToDelete.remove();
+    })
     newLi.appendChild(deleteButton);
     taskUl.appendChild(newLi);     
   })
 
-
-  let deleteButtons = document.querySelectorAll('button');
-  deleteButtons.forEach(function(button) {
-    button.addEventListener('click', function(event){
-      const taskToDelete = event.target.parentNode;
-      taskToDelete.remove();
-    })
-  })
 
 
 
