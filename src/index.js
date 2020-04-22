@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const submitButton = document.getElementsByTagName('input')[1];
   const userInput = document.getElementsByTagName('input')[0];
+  const taskUl = document.getElementById('tasks');
+  
 
   submitButton.addEventListener('click', function(event){  
     event.preventDefault();  
     let task = userInput.value;
-    let taskUl = document.getElementById('tasks');
     let newLi = document.createElement('li');
     newLi.innerHTML = `${task}`;
     let deleteButton = document.createElement('button');
@@ -20,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     taskUl.appendChild(newLi);     
   })
 
+
   const deleteButtons = document.querySelectorAll('button');
   deleteButtons.forEach(function(button) {
     button.addEventListener('click', function(event){
-      let bottonTarget = event.target;
-      let taskToDelete = bottonTarget.parentNode;
       debugger;
+      const taskToDelete = event.target.parentNode;
       taskToDelete.remove();
     })
   })
